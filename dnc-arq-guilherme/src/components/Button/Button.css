@@ -1,0 +1,51 @@
+.button { 
+    border-radius: 18px;
+    border: none;
+    column-gap: 10px;
+    cursor: pointer;
+    display: flex;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 25px 50px;
+    transition: backgorund-color 0.3s ease;
+    color: white;
+}
+
+
+/* Primary */
+.button.primary { 
+    background-color: #0C70F2;
+    color: white;
+}
+.button.primary:hover { 
+    background-color: #0056b3;
+}
+
+/* Secondary */
+.button.secondary { 
+    background-color: #1D1D1D;
+    color: white;
+}
+
+.button.secondary:hover { 
+    background-color: #4D5053;
+}
+
+/* OUTLINE */
+.button.outiline { 
+    background-color: white;
+    color: #0C70F2;
+    border: 2px outline #0C70F2;
+}
+
+.button.outiline:hover { 
+    background-color: #0C70F2;
+    color: white;
+}
+
+/* DISABLED */
+.button:disabled , .button:disabled > :hover{ 
+    background-color: #ccc;
+    color: #666;
+    pointer-events: none;
+}
