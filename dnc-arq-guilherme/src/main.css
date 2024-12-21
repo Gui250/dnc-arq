@@ -67,6 +67,27 @@ a {
   justify-content: space-between;
 }
 
+
+.gray-1-color { 
+  color: #4D5053;
+}
+
+/* TYPORGRAPHY */
+h1,h2,h3, h4, h5, h6 { 
+  font-family: 'DM-Serif Display', serif;
+  padding: 0;
+  margin: 0;
+  letter-spacing: 2.5px;
+}
+
+p { 
+  line-height: 150%;
+}
+
+.txt-center { 
+  text-align: center;
+}
+
 @media (max-width: 768px) { 
   .container { 
     width: 90%;
