@@ -1,7 +1,7 @@
 import Header from "../components/header/Header";
 import Footer from '../components/footer/Footer';
-import Button from "../components/Button/Button";
-import Banner from "../components/Banner/Banner"; 
+import Hero from "../components/Hero/Hero";
+import ProjectList from "../components/ProjectsList/ProjectList";
 
 function Home() { 
     return (
@@ -9,8 +9,10 @@ function Home() {
             <Header /> 
             <h1>Home</h1>
             <p>Subtitle</p>
-            <Button buttonStyle="primary" arrow>Olá!</Button>
-            <Banner title="Home" image="About.jpg"/>
+            <div className="container">
+                <Hero />
+                <ProjectList />
+            </div>
             <Footer />
         </>
     )
