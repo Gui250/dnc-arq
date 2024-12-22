@@ -23,12 +23,12 @@
     gap: 50px;
 }
 
-.projects-card .thumb { 
+.thumb { 
     background-position: center;
     background-size: cover;
     border-radius: 37px;
     height: 430px;
-    width: 100px;
+    width: 100%;
 }
 
 .project-card h3 { 
@@ -40,6 +40,7 @@
     font-size: 18px;
     margin: 20px 0 0 0;
 }
+
 
 
 @media (max-width: 768px) {
