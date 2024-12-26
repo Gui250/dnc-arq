@@ -6,9 +6,15 @@ import About from './pages/About';
 import Projects from './pages/Projects.jsx'; 
 import Contact from './pages/Contact';
 
+
+// Utils
+import ScrollTop from './utils/ScrollTop.jsx';
+
+
 function App() {
   return (
       <Router>
+        <ScrollTop />
         <Routes>
           <Route path="/" element={<><Home /></>}></Route>
           <Route path="/about" element={<><About /></>}></Route>
