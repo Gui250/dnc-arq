@@ -7,8 +7,6 @@ import Projects from './pages/Projects.jsx';
 import Contact from './pages/Contact';
 
 function App() {
-
-
   return (
       <Router>
         <Routes>
