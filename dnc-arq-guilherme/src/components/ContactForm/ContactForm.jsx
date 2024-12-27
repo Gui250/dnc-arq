@@ -9,12 +9,33 @@ function ContactForm() {
         message: ''
     });
     const [isFormValid, setIsFormValid] = useState(false);
+    const [formSubmitLoading, setFormSubmitLoading] = useState(false);
+    const [formSubmitted, setFormSubmitted] = useState(false);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (isFormValid) {
-            // Aqui você pode enviar os dados para um servidor ou fazer outra ação.
-            console.log("Formulário enviado:", formData);
+            setFormSubmitLoading(true); // Desativa o botão durante o envio
+            try { 
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ ...formData, access_key: 'a4aefa2e-798e-4a13-bdb3-b40f771526e0' })
+                });
+
+                if (response.ok) {
+                    setFormSubmitted(true);
+                    setFormData({ name: '', email: '', message: '' }); // Limpa os campos após envio
+                } else {
+                    alert('Erro ao enviar!');
+                }
+            } catch (e) {
+                alert('Erro: ' + e.message);
+            } finally {
+                setFormSubmitLoading(false); 
+            }
         }
     };
 
@@ -73,11 +94,12 @@ function ContactForm() {
                         />
                     </div>
                     <div className="al-center d-flex jc-end form-group">
-                        <Button type="submit" buttonStyle="secondary" disabled={!isFormValid}>
-                            Enviar
+                        <Button type="submit" buttonStyle="secondary" disabled={!isFormValid || formSubmitLoading}>
+                            {formSubmitLoading ? 'Enviando...' : 'Enviar'}
                         </Button>
                     </div>
                 </form>
+                {formSubmitted && <p>Mensagem enviada com sucesso!</p>} {/* Mensagem de sucesso */}
             </div>
         </div>
     );
